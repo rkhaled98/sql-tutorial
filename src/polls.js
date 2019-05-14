@@ -65,4 +65,32 @@ const createAuthorsWithPolls = async () => {
   );
 }
 
+const poll = (sequelize, DataTypes) => {
+  
+  
+};
+
+export default poll;
+
+const Poll = sequelize.define('poll', {
+  text: {
+    type: DataTypes.STRING,
+  },
+
+  imageURL: {
+    type: DataTypes.STRING,
+  },
+
+  upvotes: {
+    type: DataTypes.INTEGER,
+    defaultValue: 0,
+  },
+
+  downvote
+});
+
+Poll.associate = (models) => {
+  Poll.belongsTo(models.Author);
+};
+
 export default createAuthorsWithPolls;
